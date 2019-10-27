@@ -10,7 +10,7 @@ rm -rf sw_*.ogg
 rm -rf *.txt
 rm -rf start_B*
 
-### испытание 1 https://docs.google.com/spreadsheets/d/19DV5BOK1_jwg_fibdisoQy15F0L2DXEMJKP5o-Z7m7o/edit#gid=0
+### испытание 1 
 #packet_loss
 
 
