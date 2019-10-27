@@ -2,7 +2,7 @@
 tgvoip project
 
 VoIP Contest: Round 1
-General info about the contest is available on @contest. See also: This page in Russian
+General info about the contest is available on @contest. 
 
 The task in this round of the VoIP Contest is to build a system for testing voice calls with two participants.
 
