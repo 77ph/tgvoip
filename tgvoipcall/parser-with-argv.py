@@ -5,7 +5,7 @@ Created on Sat 19 Oct 2019 02:34:47 AM EDT
 
 @author: 77ph
 """
-### версия для сдечи проекта от 26-10-19. 
+### версия для сдачи проекта от 26-10-19. 
 
 import requests
 import json
