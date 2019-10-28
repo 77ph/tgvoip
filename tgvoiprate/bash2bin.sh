@@ -9,6 +9,7 @@ cd ..
 rm -rf shc
 fi
 
+## https://github.com/neurobin/shc/issues/89
 /usr/local/bin/shc -fr ./tgvoiprate.sh -o ./tgvoiprate
 
 
