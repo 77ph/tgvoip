@@ -9,7 +9,7 @@ cd ..
 rm -rf shc
 fi
 
-/usr/local/bin/shc -f ./tgvoiprate.sh -o ./tgvoiprate
+/usr/local/bin/shc -fr ./tgvoiprate.sh -o ./tgvoiprate
 
 
 
