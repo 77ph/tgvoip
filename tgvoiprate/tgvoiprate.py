@@ -4,7 +4,7 @@
 Created on Fri Oct 25 14:07:40 2019
 .
 tgvoiprate /path/to/sound_A.opus /path/to/sound_output_A.opus
- 
+4.6324
 If for some reason you can't avoid external dependencies, you may list them in a text file (see deb-packages.txt below).
  These dependencies will be installed using sudo apt-get install ... before your app is tested. Available package names
  and versions can be found here.
@@ -19,7 +19,7 @@ file3 (file_origin.opus) - origin file
 file4 (file_damaged.opus) - damaged file
 
 
-@author: 77ph.net
+@author: innerm
 """
 
 """" key constants """
@@ -28,7 +28,7 @@ flt=0.17 #frames difference
 loss_trashold=0.5  #max difference for frames in file1 and file2
 cost_trashold=0.15 #quality parameter for the cost function
 dct=0.5 #delta cost function
-corr_trashold=0.97
+corr_trashold=0.95
 #ent=0.01 #noise treshold
 hop_length=64 #distance between frames (for energy estimation only)
 frame_length=512 # frame length (for energy estimation only)
@@ -177,13 +177,13 @@ def set_estimation(r,fl,cor,loss_trashold,cost_trashold,mincost,d_cost,corr_tras
     bigloss= r>loss_trashold
     bigframediff=fl > flt
     bigcostfunmin=mincost > cost_trashold
-#    smallcostfundelta=d_cost > dct
+    smallcostfundelta=d_cost > dct
     goodcorr=cor>corr_trashold
     
-    if  (not bigloss) & (not bigframediff) &  (not bigcostfunmin) & goodcorr:
+    if  (not bigloss) & (not bigframediff) &  (not bigcostfunmin) & smallcostfundelta & goodcorr:
         rate=5+random.random()
         return rate
-    if  (not bigloss)  & (not bigframediff) & (not bigcostfunmin):
+    if  (not bigloss)  & (not bigframediff) & (not bigcostfunmin) & smallcostfundelta:
         rate=4+random.random()
         return rate
     if  (not bigloss)  & (not bigframediff) & bigcostfunmin:
@@ -195,7 +195,6 @@ def set_estimation(r,fl,cor,loss_trashold,cost_trashold,mincost,d_cost,corr_tras
     if  bigloss:
         rate=1+random.random()
         return rate
-
     
     
     
@@ -204,10 +203,10 @@ def set_estimation(r,fl,cor,loss_trashold,cost_trashold,mincost,d_cost,corr_tras
         
 """ test estimation """
 
-#file1 = '/home/innerm/voip/s-17-2/co/txt/sample17_in.txt'
-#file2 = '/home/innerm/voip/s-17-2/co/txt/sw_co_30_out.txt'
-#file3 = '/home/innerm/voip/s-17-2/co/sample17.opus'
-#file4 = '/home/innerm/voip/s-17-2/co/sw_co_30.ogg'
+#file1 = '/home/innerm/voip/pl/sw_in.txt'
+#file2 = '/home/innerm/voip/pl/file4.txt'
+#file3 = '/home/innerm/voip/pl/sw/sw.ogg'
+#file4 = '/home/innerm/voip/pl/sw/sw_pl_25.ogg'
 
 fb1,fb2,fq1,fq2,r=readfiledata(file1,file2)
 
@@ -222,11 +221,12 @@ rate= set_estimation(r,fl,cor,loss_trashold,cost_trashold,mincost,d_cost,corr_tr
 #bigcostfunmin
 #smallcostfundelta
 #goodcorr
-#print(file4)
-#print('r:',r,loss_trashold)
-#print('fl:',fl,flt)
-#print('mincost:',mincost,cost_trashold)
-#print('d_cost:',d_cost,dct)
-#print('corr:',cor,corr_trashold)
+
+print('r:',r,loss_trashold)
+print('fl:',fl,flt)
+print('mincost:',mincost,cost_trashold)
+print('d_cost:',d_cost,dct)
+print('corr:',cor,corr_trashold)
 
 print('rate',rate)
+
