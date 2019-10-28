@@ -222,11 +222,11 @@ rate= set_estimation(r,fl,cor,loss_trashold,cost_trashold,mincost,d_cost,corr_tr
 #smallcostfundelta
 #goodcorr
 
-print('r:',r,loss_trashold)
-print('fl:',fl,flt)
-print('mincost:',mincost,cost_trashold)
-print('d_cost:',d_cost,dct)
-print('corr:',cor,corr_trashold)
+#print('r:',r,loss_trashold)
+#print('fl:',fl,flt)
+#print('mincost:',mincost,cost_trashold)
+#print('d_cost:',d_cost,dct)
+#print('corr:',cor,corr_trashold)
 
 print('rate',rate)
 
