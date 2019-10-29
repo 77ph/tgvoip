@@ -1,25 +1,21 @@
-sudo apt-get install build-essential
-apt install sudo
-sudo apt-get install build-essential
-sudo apt-get install manpages-dev
-sudo apt-get install git
-sudo apt-get install libssl-dev
-sudo apt-get install libopus-dev
-sudo apt-get install libpulse-dev 
-sudo apt-get install libasound-dev
-sudo apt-get install automake     
-sudo apt-get install libtool
-sudo apt-get install cmake
-sudo apt-get install python3-dev
-sudo apt-get install python3-pip
-sudo apt-get install cmake
-sudo apt-get install opus-tools
-
-
-sudo apt-get install python3-scipy
-sudo apt-get install python3-pandas
-sudo apt-get install python3-numpy
-sudo apt-get install python3-sklearn
+sudo apt-apt -y install sudo
+sudo apt-get -y install build-essential
+sudo apt-get -y install manpages-dev
+sudo apt-get -y install git
+sudo apt-get -y install libssl-dev
+sudo apt-get -y install libopus-dev
+sudo apt-get -y install libpulse-dev 
+sudo apt-get -y install libasound-dev
+sudo apt-get -y install automake     
+sudo apt-get -y install libtool
+sudo apt-get -y install cmake
+sudo apt-get -y install python3-dev
+sudo apt-get -y install python3-pip
+sudo apt-get -y install opus-tools
+sudo apt-get -y install python3-scipy
+sudo apt-get -y install python3-pandas
+sudo apt-get -y install python3-numpy
+sudo apt-get -y install python3-sklearn
 
 --- tgvoiprate
 pip3 install numpy
