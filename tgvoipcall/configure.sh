@@ -31,7 +31,7 @@ export CXXFLAGS="-O3"
 autoreconf --force --install
 ./configure --enable-audio-callback
 make
-make install
+sudo make install
 cd ..
 
 cp ./libtgvoip/.libs/libtgvoip.a ./
