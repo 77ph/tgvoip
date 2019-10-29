@@ -17,7 +17,7 @@ sudo apt-get -y install python3-pandas
 sudo apt-get -y install python3-numpy
 sudo apt-get -y install python3-sklearn
 
---- tgvoiprate
+#--- tgvoiprate
 pip3 install numpy
 pip3 install scipy
 pip3 install sklearn
